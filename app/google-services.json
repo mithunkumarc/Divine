@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "978509006799",
+    "firebase_url": "https://newdivine-c54a7.firebaseio.com",
+    "project_id": "newdivine-c54a7",
+    "storage_bucket": "newdivine-c54a7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:978509006799:android:6766fdafd573de7c",
+        "android_client_info": {
+          "package_name": "divine.calcify.com.divine"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "978509006799-8nhi6k7u1nirrh9c244960tir81ic5lg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQesxQoM1CeGFAQi_k52JiKRJzC6GSTEE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
