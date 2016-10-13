@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="divine.calcify.com.divine">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+            android:name="divine.calcify.activities.SplashScreenActivity"
+            android:theme="@style/hometheme" />
+        <activity
+            android:name="divine.calcify.activities.HomeScreenActivity"
+            android:label="@string/Home_screen_title"
+            android:theme="@style/hometheme" />
+
+        <meta-data
+            android:name="android.app.searchable"
+            android:resource="@xml/searchable" />
+
+        <activity
+            android:name="divine.calcify.activities.LocationActivity"
+            android:theme="@style/DialogAnimation" />
+        <activity
+            android:name="divine.calcify.activities.LocationScreenActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name="divine.calcify.activities.GroupsListActivity"
+            android:label="@string/Group_screen_title"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="divine.calcify.activities.DetailGroupActivity"
+            android:label="@string/Detail_group_screen_title" />
+        <activity
+            android:name="divine.calcify.activities.CalendarScreenActivity"
+            android:label="@string/calendar_screen_title"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name="divine.calcify.activities.ServicePartnerListActivity" />
+        <activity
+            android:name="divine.calcify.activities.SendQuoteToPartnerActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name="divine.calcify.activities.PartnerProfileInfoActivity" />
+        <activity android:name="divine.calcify.activities.PartnerProfileInformationActvity" />
+        <activity
+            android:name="divine.calcify.activities.RegistrationHomeScreenActivity"
+            android:theme="@style/Regestration">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="divine.calcify.activities.RegisterOtpScreenActivity"
+            android:theme="@style/Regestration" />
+        <activity
+            android:name="divine.calcify.activities.RegisterCompleteScreenActivity"
+            android:theme="@style/Regestration" />
+        <activity android:name="divine.calcify.activities.RegUpdateMyProfileActivity" />
+        <activity android:name="divine.calcify.activities.ShowTempleListActivity" />
+        <activity android:name="divine.calcify.activities.DisplayEventInformation" />
+        <activity android:name="divine.calcify.activities.AddMembersToEventActivity" />
+        <activity android:name="divine.calcify.activities.PayForEventActivity" />
+        <activity
+            android:name="divine.calcify.activities.CartActivity"
+            android:label="@string/cart_activity" />
+
+        <service
+            android:name=".FirebaseMessagingService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".FirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name="divine.calcify.activities.DetailTempleActivity"
+            android:label=""></activity>
+    </application>
+
+</manifest>

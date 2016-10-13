@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Divine</string>
+    <string name="navigation_drawer_open">open</string>
+    <string name="navigation_drawer_close">close</string>
+
+    <string name="one">ONE</string>
+    <string name="eight">EIGHT</string>
+    <string name="five">FIVE</string>
+    <string name="four">FOUR</string>
+    <string name="nine">NINE</string>
+    <string name="seven">SEVEN</string>
+    <string name="six">SIX</string>
+    <string name="ten">TEN</string>
+    <string name="three">THREE</string>
+    <string name="two">TWO</string>
+    <string name="title_activity_scrollable_tabs">Scrollable Tabs</string>
+    <string name="title_activity_simple_tabs">Simple Tabs</string>
+    <string name="btn_simple_tabs">Simple Tabs</string>
+    <string name="btn_scrollable_tabs">Scrollable Tabs</string>
+    <string name="btn_icon_text_tabs">Icon &amp; Text Tabs</string>
+    <string name="btn_icon_tabs">Only Icon Tabs</string>
+    <string name="btn_pinned_top_tabs">Pinned To Top Tabs</string>
+    <string name="title_activity_icon_text_tabs">Icon and Text Tabs</string>
+    <string name="title_activity_icon_tabs">Icon Tabs</string>
+    <string name="btn_custom_icon_tabs">Custom View Icon &amp; Text</string>
+    <string name="title_activity_custom_view_icon_text_tabs">Custom View Icon &amp; Text</string>
+    <string name="title_activity_pinned_top_tabs">Pin Top Tabs</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="homescreen_search">search</string>
+    <string name="homescreen_notification">notification</string>
+    <string name="searchable">Searchable</string>
+
+    <string name="homescreen_back">back</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="rupee_symbol">&#x20B9;</string>
+    <!--<string name="cheese_ipsum">Jarlsberg lancashire edam. Dolcelatte hard cheese brie st. agur blue
+    cheese caerphilly bavarian bergkase cheese and biscuits mascarpone. Cheeseburger swiss bavarian
+    bergkase cream cheese fromage frais cheesy feet port-salut airedale. St. agur blue cheese rubber
+    cheese caerphilly cheddar cheesecake cream cheese manchego lancashire. Roquefort squirty cheese
+    the big cheese.</string>-->
+
+    <string name="Home_screen_title">Home</string>
+    <string name="Group_screen_title">Groups</string>
+    <string name="calendar_screen_title">Select Date &amp; Time</string>
+    <string name="Detail_group_screen_title">Services</string>
+    <string name="donate_quote">* minimum amout to be donated is </string>
+    <string name="donate_subquote">50/-</string>
+    <string name="pfe_donate_oath">I would like to donate,</string>
+    <string name="pfe_add_to_cart_event_text">Add To Cart</string>
+
+
+    <string name="sqp_send_quote_text">Send Quote</string>
+
+
+    <string name="spl_send_quote_text">Send Quote</string>
+    <string name="spl_cart_text">Add To Cart</string>
+
+    <string name="cart_activity">My Cart</string>
+</resources>

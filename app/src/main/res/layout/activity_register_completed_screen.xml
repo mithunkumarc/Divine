@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:alpha="0.70"
+    android:background="@drawable/divine_registration"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    tools:context="divine.calcify.activities.RegisterCompleteScreenActivity">
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:src="@drawable/events_tab_ic"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+    <TextView
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="Thank You !"
+        android:textSize="25dp"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/rcs_complete_profile_button"
+        android:textSize="25dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:text="Complete Profile"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="bottom"
+        android:background="#FF9800"
+        android:layout_width="match_parent"
+        android:layout_height="48dp" />
+    <TextView
+        android:id="@+id/rcs_skip"
+        android:layout_marginTop="230dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:text="Skip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

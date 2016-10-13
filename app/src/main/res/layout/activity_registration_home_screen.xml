@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/divine_registration"
+    android:alpha="0.70"
+    tools:context="divine.calcify.activities.RegistrationHomeScreenActivity">
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:src="@drawable/events_tab_ic"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+    <EditText
+        android:id="@+id/rhs_full_name"
+        android:imeOptions="actionNext"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textColorHint="@color/white"
+        android:hint="Full Name"
+        android:layout_marginTop="20dp"
+        android:theme="@style/Regestration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <AutoCompleteTextView
+        android:id="@+id/rhs_home_location"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textColorHint="@color/white"
+        android:hint="Home Location"
+        android:layout_marginTop="30dp"
+        android:theme="@style/Regestration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:imeOptions="actionNone"
+            android:singleLine="true"
+            android:textSize="25dp"
+            android:editable="false"
+            android:textColor="@color/white"
+            android:text="+91"
+            android:theme="@style/Regestration"
+            android:id="@+id/rhs_country_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/rhs_mobile_number"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
+            android:textColor="@color/white"
+            android:maxLines="1"
+            android:maxLength="10"
+            android:inputType="number"
+            android:digits="0123456789"
+            android:textColorHint="@color/white"
+            android:textSize="25dp"
+            android:hint="Mobile Number"
+            android:theme="@style/Regestration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/rhs_submit_button"
+        android:textSize="25dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:text="Submit"
+        android:layout_marginTop="110dp"
+        android:layout_gravity="bottom"
+        android:background="#FF9800"
+        android:layout_width="match_parent"
+        android:layout_height="48dp" />
+</LinearLayout>

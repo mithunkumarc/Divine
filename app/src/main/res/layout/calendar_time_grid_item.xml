@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="48dp">
+    <android.support.v7.widget.CardView
+        android:layout_width="40dp"
+        android:layout_height="40dp">
+        <TextView
+            android:textColor="@color/colorPrimaryDark"
+            android:gravity="center_horizontal|center_vertical"
+            android:clickable="true"
+            android:textSize="17dp"
+            android:id="@+id/calendar_time_grid_numbers"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EDEDEB"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:theme="@style/ToolbarColoredBackArrow"
+        android:id="@+id/sqp_toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        app:titleTextColor="@android:color/white"
+        app:theme="@style/ThemeOverlay.AppCompat"
+        android:background="@color/colorPrimary">
+    </android.support.v7.widget.Toolbar>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            xmlns:android="http://schemas.android.com/apk/res/android" >
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="405dp">
+                <android.support.v7.widget.CardView
+                    android:background="#FFFFFF"
+                    android:paddingBottom="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:background="#F6F6F6"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp">
+                            <TextView
+                                android:textColor="#6C6C6C"
+                                android:textStyle="bold"
+                                android:paddingTop="9dp"
+                                android:paddingLeft="15dp"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:text="Service Name and Details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+                        <TextView
+                            android:textColor="#929292"
+                            android:paddingLeft="15dp"
+                            android:id="@+id/sqp_service_name"
+                            android:text="Service Name"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:textColor="#929292"
+                            android:paddingLeft="15dp"
+                            android:id="@+id/sqp_selected_date"
+                            android:text="date"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:textColor="#929292"
+                            android:paddingLeft="15dp"
+                            android:id="@+id/sqp_selected_day"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="day"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:textColor="#929292"
+                            android:paddingLeft="15dp"
+                            android:id="@+id/sqp_selected_location"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="location"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView
+                    android:background="#FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:background="#F6F6F6"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp">
+                            <TextView
+                                android:textColor="#6C6C6C"
+                                android:textStyle="bold"
+                                android:paddingLeft="15dp"
+                                android:paddingTop="9dp"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:text="Selected Service Providers"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <android.support.v7.widget.RecyclerView
+                            android:scrollbars="vertical"
+                            android:paddingBottom="5dp"
+                            android:paddingLeft="15dp"
+                            android:id="@+id/sqp_recycler_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp">
+                        </android.support.v7.widget.RecyclerView>
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/sqp_quote_amout"
+                android:maxLength="6"
+                android:textColorHint="@color/greyed_out"
+                android:textSize="14dp"
+                android:clickable="true"
+                android:digits="0123456789"
+                android:inputType="number"
+                android:layout_gravity="center"
+                android:background="@drawable/textinputborder"
+                android:gravity="center"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:hint="Enter Your Amount Here"
+                android:layout_width="200dp"
+                android:layout_height="48dp" />
+    <Button
+        android:textAllCaps="false"
+        android:textColorHint="#FFDCBF"
+        android:layout_marginBottom="10dp"
+        android:elevation="5dp"
+        android:clickable="true"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="bottom"
+        android:background="@color/border_line_on"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:text="@string/sqp_send_quote_text"
+        android:id="@+id/sqp_quote_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+
+
+
+
+        </LinearLayout>
+</LinearLayout>

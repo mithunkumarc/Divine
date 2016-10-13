@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/hs_back_button"
+            android:icon="@mipmap/ic_back"
+            android:title="@string/homescreen_back"
+            ></item>
+        <item
+            android:id="@+id/homescreen_menu_home"
+            android:title="Home"
+            android:icon="@mipmap/ic_action_drawer"
+            />
+        <item
+            android:id="@+id/homescreen_menu_message"
+            android:title="Home"
+            android:icon="@mipmap/ic_launcher"
+            />
+        <item
+            android:id="@+id/homescreen_menu_settings"
+            android:title="Home"
+            android:icon="@mipmap/ic_launcher"
+            />
+
+
+
+
+    </group>
+    <item android:title="social">
+        <menu>
+            <item android:title="add to group"
+                android:id="@+id/homescreen_addToGroup"
+                android:icon="@mipmap/ic_launcher"
+                ></item>
+
+        </menu>
+
+    </item>
+
+</menu>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:orientation="vertical"
+    android:alpha="0.70"
+    android:background="@drawable/divine_registration"
+    tools:context="divine.calcify.activities.RegisterOtpScreenActivity">
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:src="@drawable/events_tab_ic"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:focusableInTouchMode="false"
+            android:editable="false"
+            android:text="+91"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/ros_mobile_number"
+            android:focusableInTouchMode="false"
+            android:inputType="number"
+            android:digits="1234567890"
+            android:textColor="@color/white"
+            android:maxLines="1"
+            android:textSize="25dp"
+            android:textColorHint="@color/white"
+            android:hint="Mobile Number"
+            android:theme="@style/Regestration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/ros_otp_number"
+        android:textColor="@color/white"
+        android:layout_marginTop="30dp"
+        android:maxLines="1"
+        android:maxLength="4"
+        android:inputType="number"
+        android:digits="0123456789"
+        android:textColorHint="@color/white"
+        android:textSize="25dp"
+        android:hint="Enter OTP"
+        android:theme="@style/Regestration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/ros_register_button"
+        android:focusableInTouchMode="false"
+        android:textSize="25dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:text="Register"
+        android:layout_marginTop="195dp"
+        android:layout_gravity="bottom"
+        android:background="#FF9800"
+        android:layout_width="match_parent"
+        android:layout_height="48dp" />
+
+</LinearLayout>

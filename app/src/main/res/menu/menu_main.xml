@@ -1,0 +1,28 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="divine.calcify.activities.HomeScreenActivity">
+
+    <!-- "Mark Favorite", should appear as action button if possible -->
+
+        <item
+            android:id="@+id/menu_search"
+            android:icon="@mipmap/ic_search"
+            android:title="@string/homescreen_search"
+            android:orderInCategory="1"
+            app:showAsAction="always"
+            /><!--app:actionViewClass="android.support.v7.widget.SearchView"-->
+        <item android:id="@+id/menu_notifications"
+            android:icon="@mipmap/ic_divine_notification"
+            android:title="@string/homescreen_notification"
+            android:orderInCategory="2"
+            app:showAsAction="always" />
+    <item android:id="@+id/menu_cart"
+        android:orderInCategory="3"
+        android:icon="@drawable/ic_cart"
+        app:showAsAction="always"
+        android:title="cart"/>
+
+
+</menu>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/calendar_screen_toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:theme="@style/ToolbarColoredBackArrow"
+        app:titleTextColor="@android:color/white"
+        android:background="@color/colorPrimary">
+    </android.support.v7.widget.Toolbar>
+
+    <!-- Layout for content is here. This can be a RelativeLayout  -->
+    <LinearLayout
+        android:background="#ECECEA"
+        android:orientation="vertical"
+        android:id="@+id/calendar_parent_layout"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:calenderNS="http://schemas.android.com/apk/res-auto"
+        xmlns:app="http://schemas.android.com/tools"> <!-- to show what the parent is -->
+
+        <divine.calcify.ui.CalendarView
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            xmlns:calendarNS="http://schemas.android.com/apk/res/divine.calcify.ui"
+            android:id="@+id/calendar_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            calenderNS:dateFormat="MMMM yyyy"
+            />
+            <LinearLayout
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:orientation="vertical"
+                android:layout_below="@+id/calendar_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--<TimePicker
+                    android:numbersSelectorColor="#ff8533"
+                    android:layout_marginTop="0dp"
+                    android:theme="@style/android:Widget.Material.Light.TimePicker"
+                    android:elevation="5dp"
+                    android:id="@+id/time_picker"
+                    android:timePickerMode="spinner"
+                    android:layout_width="260dp"
+                    android:layout_height="180dp"></TimePicker>
+                <Button
+                    android:clickable="true"
+                    android:onClick="showPartnersList"
+                    android:layout_gravity="center_vertical"
+                    android:layout_alignRight="@+id/time_picker"
+                    android:layout_below="@+id/time_picker"
+                    android:textAlignment="center"
+                    android:text="Done"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp" />-->
+                <android.support.v7.widget.CardView
+                    android:layout_marginTop="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="116dp">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_marginBottom="8dp"
+                                android:textSize="18dp"
+                                android:paddingLeft="10dp"
+                                android:id="@+id/calendar_title_time"
+                                android:text="Time"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:layout_gravity="center"
+                                android:layout_weight=".1"
+                                android:src="@drawable/orange_left_arrow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                            <android.support.v7.widget.RecyclerView
+                                android:paddingLeft="5dp"
+                                android:layout_gravity="center"
+                                android:id="@+id/calendar_recyclerview_time_grid"
+                                android:layout_weight=".8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"></android.support.v7.widget.RecyclerView>
+                            <ImageView
+                                android:layout_weight=".1"
+                                android:src="@drawable/orange_right_arrow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp">
+                            <TextView
+                                android:textColor="@color/colorPrimaryDark"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:id="@+id/calendar_AM_text"
+                                android:layout_marginRight="0dp"
+                                android:paddingRight="5dp"
+                                android:text="AM"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp" />
+                            <TextView
+                                android:textColor="@color/colorPrimaryDark"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:id="@+id/calendar_PM_text"
+                                android:layout_marginLeft="5dp"
+                                android:paddingLeft="5dp"
+                                android:text="PM"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+        <Button
+            android:textAllCaps="false"
+            android:layout_gravity="bottom"
+            android:clickable="true"
+            android:onClick="showPartnersList"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_alignRight="@+id/time_picker"
+            android:layout_below="@+id/time_picker"
+            android:textAlignment="center"
+            android:text="Quote"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+    </LinearLayout>
+
+</LinearLayout>
