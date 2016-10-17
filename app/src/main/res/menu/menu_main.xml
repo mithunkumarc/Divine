@@ -21,6 +21,7 @@
     <item android:id="@+id/menu_cart"
         android:orderInCategory="3"
         android:icon="@drawable/ic_cart"
+        app:actionLayout="@layout/notification_layout"
         app:showAsAction="always"
         android:title="cart"/>
 

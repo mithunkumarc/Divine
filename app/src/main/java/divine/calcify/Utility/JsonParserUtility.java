@@ -320,6 +320,7 @@ public class JsonParserUtility {
                     services.setTimeSelectedByCustomerForService(jsonObjectOne.getString("timeOfEvent"));
                     services.setDateSelectedByCustomerForService(jsonObjectOne.getString("dateOfEvent"));
                     services.getUniqueServiceIds().add(jsonObjectOne.getString("serviceID"));
+                    services.setCartStatus(jsonObjectOne.getString("status"));
                     Partner partner = new Partner();
                     partner.setUserID(jsonObjectOne.getString("partnerID"));
                     partner.setPartnerName(jsonObjectOne.getString("partnerName"));
@@ -340,6 +341,7 @@ public class JsonParserUtility {
                                     services.setTimeSelectedByCustomerForService(jsonObjectOne.getString("timeOfEvent"));
                                     services.setDateSelectedByCustomerForService(jsonObjectOne.getString("dateOfEvent"));
                                     services.getUniqueServiceIds().add(jsonObjectOne.getString("serviceID"));
+                                    services.setCartStatus(jsonObjectOne.getString("status"));
                                     Partner partner = new Partner();
                                     partner.setUserID(jsonObjectOne.getString("partnerID"));
                                     partner.setPartnerName(jsonObjectOne.getString("partnerName"));
@@ -366,6 +368,7 @@ public class JsonParserUtility {
             }
         }catch (Exception e){
             Log.d("error/parseCart=",e.getMessage());
+            //need to handle for single object?
         }
         return serviceCartListByDatesArrayList;
     }

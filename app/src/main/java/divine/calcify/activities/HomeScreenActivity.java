@@ -83,6 +83,7 @@ public class HomeScreenActivity extends AppCompatActivity  implements HomeScreen
     private ActionBarDrawerToggle mDrawerToggle;
     private String mActivityTitle;
     Dialog toolbarSearchDialog;
+    TextView badgeCount;
     //selected location in locatin popup
 
     //position of selected location
@@ -219,6 +220,16 @@ public class HomeScreenActivity extends AppCompatActivity  implements HomeScreen
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        final View notificaitons = menu.findItem(R.id.menu_cart).getActionView();
+        badgeCount = (TextView) notificaitons.findViewById(R.id.badgeCount);
+        badgeCount.setText("0");
+        notificaitons.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeScreenActivity.this,CartActivity.class);
+                startActivity(intent);
+            }
+        });
         return true;
     }
 

@@ -13,9 +13,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -43,7 +46,9 @@ public class CartActivity extends AppCompatActivity {
     String calendar_selected_day;
     ServiceCartFragment serviceCartFragment = new ServiceCartFragment();
     EventCartFragment eventCartFragment = new EventCartFragment();
-    //
+    //badge
+    TextView badgeCount;
+    int badge_count=0;
     String userMobileNumberAsId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,8 +113,8 @@ public class CartActivity extends AppCompatActivity {
             }catch (Exception e){
                 Log.d("getServiceCartListEr:",e.getMessage());
             }
-
-
+            //updateBadgeCount(serviceCartListByDatesArrayList.size());
+            invalidateOptionsMenu();
 
         //}
 
@@ -146,4 +151,35 @@ public class CartActivity extends AppCompatActivity {
             return fragments[position];
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.general_menu, menu);
+
+        final View notificaitons = menu.findItem(R.id.menu_cart).getActionView();
+        badgeCount = (TextView) notificaitons.findViewById(R.id.badgeCount);
+        badge_count = badge_count+1;
+        updateBadgeCount(serviceCartListByDatesArrayList.size());
+
+        /*notificaitons.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //    
+            }
+        });*/
+        return true;
+    }
+
+    //update badge count
+    public void updateBadgeCount(final int badge_count) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                badgeCount.setText(badge_count+"");
+            }
+        });
+    }
+
+
 }

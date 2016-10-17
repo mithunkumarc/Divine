@@ -6,7 +6,7 @@ import java.net.PortUnreachableException;
  * Created by Calcify3 on 25-05-2016.
  */
 public class DivineKeyWords {
-    public static String ipAddress = "192.168.1.122";
+    public static String ipAddress = "192.168.1.127";
     //list of partner-services available for each service within groups corresponding to current/home location
     public static String SERVICES_KEY = "SERVICES";
     public static String GROUP_SERVICES_URL = "http://"+ipAddress+":8080/App/partner/getAllServiceByLocationId";
@@ -73,8 +73,13 @@ public class DivineKeyWords {
     public static String PURCHASE_ORDER_SERVICE_CART_KEY = "PURCHASE_ORDER_SERVICE_CART_KEY";
     public static String PURCHASE_ORDER_SERVICE_CART_URL = "http://"+ipAddress+":8080/App/partner/orderConformByUser";
 
-    //get cart details of service
+    //confirm service from service cart
+    public static String CONFIRM_SERVICE_FROM_SERVICE_CART_KEY = "CONFIRM_SERVICE_FROM_SERVICE_CART";
+    public static String CONFIRM_SERVICE_FROM_SERVICE_CART_URL = "";
 
+    //delete service from service cart
+    public static String DELETE_SERVICE_FROM_SERVICE_CART_KEY = "DELETE_SERVICE_FROM_SERVICE_CART";
+    public static String DELETE_SERVICE_FROM_SERVICE_CART_URL = "";
 
     //divine group services - god with its pooja list
     //services - simply list of pooja, each services identified with id to match which pooja belong to which god.

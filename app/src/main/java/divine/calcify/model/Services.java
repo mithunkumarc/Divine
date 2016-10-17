@@ -19,6 +19,15 @@ public class Services implements Serializable {
     private String enquiryId;//cart service id
     private ArrayList<Partner> partnerArrayList = new ArrayList<>();
     private String serviceCost;
+    private String cartStatus;
+
+    public String getCartStatus() {
+        return cartStatus;
+    }
+
+    public void setCartStatus(String cartStatus) {
+        this.cartStatus = cartStatus;
+    }
 
     private HashSet<String> uniqueServiceIds = new HashSet<>();
 
