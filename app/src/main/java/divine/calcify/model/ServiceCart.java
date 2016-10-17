@@ -1,5 +1,8 @@
 package divine.calcify.model;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+
 /**
  * Created by Calcify3 on 06-10-2016.
  */
@@ -21,6 +24,27 @@ public class ServiceCart {
     private String date;
     private String cost;
     private String status;
+    private ArrayList<ServiceCartListByDates> serviceCartListByDates = new ArrayList<>();
+
+    private HashSet<String> uniqueDateList = new HashSet<>();
+
+
+    public HashSet<String> getUniqueDateList() {
+        return uniqueDateList;
+    }
+
+    public void setUniqueDateList(HashSet<String> uniqueDateList) {
+        this.uniqueDateList = uniqueDateList;
+    }
+
+    public ArrayList<ServiceCartListByDates> getServiceCartListByDates() {
+        return serviceCartListByDates;
+    }
+
+    public void setServiceCartListByDates(ArrayList<ServiceCartListByDates> serviceCartListByDates) {
+        this.serviceCartListByDates = serviceCartListByDates;
+    }
+
 
     public String getStatus() {
         return status;

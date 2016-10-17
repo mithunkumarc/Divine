@@ -77,12 +77,12 @@ public class Utilities {
     }
 
     //getTotalAmoutOfServiceCartList
-    public static Double getTotalAmoutOfServiceCartList(){
+    /*public static Double getTotalAmoutOfServiceCartList(){
         Double total = 0.0;
         for (int index = 0; index< CartActivity.serviceCartArrayList.size();index++){
             total = total + Double.parseDouble(CartActivity.serviceCartArrayList.get(index).getCost());
         }
         return total;
-    }
+    }*/
 
 }

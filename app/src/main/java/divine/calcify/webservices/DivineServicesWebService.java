@@ -244,6 +244,9 @@ public class DivineServicesWebService extends AsyncTask<String, Integer, Double>
                 nameValuePairs.add(new BasicNameValuePair("partnerName",quoteHashMap.get("partnerName")));
                 nameValuePairs.add(new BasicNameValuePair("partnerID",quoteHashMap.get("partnerID")));
                 nameValuePairs.add(new BasicNameValuePair("userQuoteAmout",quoteHashMap.get("userQuoteAmout")));
+                nameValuePairs.add(new BasicNameValuePair("customerName",quoteHashMap.get("customerName")));
+                nameValuePairs.add(new BasicNameValuePair("mobileNumber",quoteHashMap.get("mobileNumber")));
+
                 httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
             }
 
@@ -387,9 +390,9 @@ public class DivineServicesWebService extends AsyncTask<String, Integer, Double>
 
             //get the list of services saved in the cart
             if (this.key.equals(DivineKeyWords.GET_SERVICES_LIST_FROM_CART_KEY)){
-                CartActivity.serviceCartArrayList = JsonParserUtility.getServicesFromCart(replyString);
-
-                //Log.d("cart services =",newj);
+                //CartActivity.serviceCartArrayList = JsonParserUtility.getServicesFromCart(replyString);
+                CartActivity.serviceCartListByDatesArrayList = JsonParserUtility.getServicesFromCart(replyString);
+                Log.d("cart services =",replyString);
             }
 
             //purchase order for service cart

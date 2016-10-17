@@ -6,7 +6,7 @@ import java.net.PortUnreachableException;
  * Created by Calcify3 on 25-05-2016.
  */
 public class DivineKeyWords {
-    public static String ipAddress = "192.168.1.114";
+    public static String ipAddress = "192.168.1.122";
     //list of partner-services available for each service within groups corresponding to current/home location
     public static String SERVICES_KEY = "SERVICES";
     public static String GROUP_SERVICES_URL = "http://"+ipAddress+":8080/App/partner/getAllServiceByLocationId";
@@ -63,14 +63,17 @@ public class DivineKeyWords {
     public static String INSERT_SERVICE_CART_DETAILS_URL ="http://"+ipAddress+":8080/App/partner/insertEnquiryDetails";
 
     //get list of services saved in the cart
+    //public static String GET_SERVICES_LIST_FROM_CART_KEY = "GET_SERVICES_LIST_FROM_CART_KEY";
+    //public static String GET_SERVICES_LIST_FROM_CART_URL = "http://"+ipAddress+":8080/App/partner/getCartListByUserID";
     public static String GET_SERVICES_LIST_FROM_CART_KEY = "GET_SERVICES_LIST_FROM_CART_KEY";
-    public static String GET_SERVICES_LIST_FROM_CART_URL = "http://"+ipAddress+":8080/App/partner/getCartListByUserID";
+    public static String GET_SERVICES_LIST_FROM_CART_URL = "http://"+ipAddress+":8080/App/partner/getEnquiryListByUserID";
 
 
     //purchase order for service cart
     public static String PURCHASE_ORDER_SERVICE_CART_KEY = "PURCHASE_ORDER_SERVICE_CART_KEY";
     public static String PURCHASE_ORDER_SERVICE_CART_URL = "http://"+ipAddress+":8080/App/partner/orderConformByUser";
 
+    //get cart details of service
 
 
     //divine group services - god with its pooja list

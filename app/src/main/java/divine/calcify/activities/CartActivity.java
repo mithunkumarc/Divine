@@ -26,11 +26,13 @@ import divine.calcify.fragments.ServiceCartFragment;
 import divine.calcify.model.Locations;
 import divine.calcify.model.Partner;
 import divine.calcify.model.ServiceCart;
+import divine.calcify.model.ServiceCartListByDates;
 import divine.calcify.model.Services;
 import divine.calcify.webservices.DivineServicesWebService;
 
 public class CartActivity extends AppCompatActivity {
-    public static ArrayList<ServiceCart> serviceCartArrayList = new ArrayList<>();
+    //public static ArrayList<ServiceCart> serviceCartArrayList = new ArrayList<>();
+    public static ArrayList<ServiceCartListByDates> serviceCartListByDatesArrayList = new ArrayList<>();
     Services services;
     TabLayout cartTabLayout;
     ViewPager cartViewPager;
@@ -73,7 +75,9 @@ public class CartActivity extends AppCompatActivity {
 
         cartViewPager = (ViewPager) findViewById(R.id.cart_viewPager);
         cartTabLayout = (TabLayout)findViewById(R.id.cart_tabLayout);
-
+        cartTabLayout.setBackgroundColor(getResources().getColor(R.color.black));
+        cartTabLayout.setTabTextColors(getResources().getColor(R.color.white),getResources().getColor(R.color.white));
+        cartTabLayout.setSelectedTabIndicatorColor(getResources().getColor(R.color.colorAccent));
         cartViewPager.setAdapter(new CustomCartAdapter(getSupportFragmentManager(),getApplicationContext()));
 
         cartTabLayout.setupWithViewPager(cartViewPager);
@@ -97,7 +101,7 @@ public class CartActivity extends AppCompatActivity {
 
         //cart_key = getIntent().getStringExtra("cart_data");// DivineKeyWords.SERVICE_CART_DATA
         //if(serviceCartArrayList.size()==0){
-            serviceCartArrayList.clear();
+            serviceCartListByDatesArrayList.clear();
             DivineServicesWebService getServiceCartListWS = new DivineServicesWebService(this,DivineKeyWords.GET_SERVICES_LIST_FROM_CART_KEY,userMobileNumberAsId);
             try{
                 Double result = getServiceCartListWS.execute().get();
@@ -114,7 +118,7 @@ public class CartActivity extends AppCompatActivity {
 
     private class CustomCartAdapter extends FragmentPagerAdapter {
 
-        private String fragments [] = {"Service Cart","Event Cart"};
+        private String fragments [] = {"Service","Event"};
 
         public CustomCartAdapter(FragmentManager supportFragmentManager, Context applicationContext) {
             super(supportFragmentManager);

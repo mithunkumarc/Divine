@@ -28,6 +28,7 @@ import divine.calcify.adapters.CartServiceAdapter;
 import divine.calcify.adapters.DivineTempleEventListAdapter;
 import divine.calcify.com.divine.R;
 import divine.calcify.model.ServiceCart;
+import divine.calcify.model.Services;
 import divine.calcify.webservices.DivineServicesWebService;
 
 
@@ -36,7 +37,7 @@ public class ServiceCartFragment extends Fragment {
         RecyclerView cart_recycler_view;
         TextView cart_service_total;
         Double totalServiceCartAmout;
-        LinearLayout cart_service_purchase_order;
+        //LinearLayout cart_service_purchase_order;
         String selected_cart_id;
         public static String purchaseOrderServiceCartResult;
         @Nullable
@@ -44,21 +45,22 @@ public class ServiceCartFragment extends Fragment {
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_service_cart, container, false);
             cart_recycler_view = (RecyclerView)rootView.findViewById(R.id.cart_service_recycler_view);
-            cart_service_total = (TextView)rootView.findViewById(R.id.cart_service_total);
-            cart_service_purchase_order = (LinearLayout) rootView.findViewById(R.id.cart_service_purchase_order);
+            //cart_service_total = (TextView)rootView.findViewById(R.id.cart_service_total);
+            //cart_service_purchase_order = (LinearLayout) rootView.findViewById(R.id.cart_service_purchase_order);
             LinearLayoutManager hs_linearLayout = new LinearLayoutManager(getActivity());
             cart_recycler_view.setLayoutManager(hs_linearLayout);
             cart_recycler_view.setHasFixedSize(true);
-            cartServiceAdapter = new CartServiceAdapter(getActivity(), CartActivity.serviceCartArrayList);
+            ArrayList<Services> servicesArrayList = addAllServicesList();
+            cartServiceAdapter = new CartServiceAdapter(getActivity(), servicesArrayList);
             cartServiceAdapter.notifyDataSetChanged();
             cart_recycler_view.setAdapter(cartServiceAdapter);
-            if (CartActivity.serviceCartArrayList.size()>0){
+            /*if (CartActivity.serviceCartArrayList.size()>0){
                 totalServiceCartAmout = Utilities.getTotalAmoutOfServiceCartList();
-            }
+            }*/
             String rupee_symbol = getResources().getString(R.string.rupee_symbol);
-            cart_service_total.setText("Total("+rupee_symbol+totalServiceCartAmout+"/-)");
+            //cart_service_total.setText("Total("+rupee_symbol+totalServiceCartAmout+"/-)");
             //return inflater.inflate(R.layout.fragment_services, container, false);
-            cart_service_purchase_order.setOnClickListener(new View.OnClickListener() {
+            /*cart_service_purchase_order.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (CartActivity.serviceCartArrayList.size()==1){
@@ -66,7 +68,7 @@ public class ServiceCartFragment extends Fragment {
                         sendPurchaseOrderServiceCart(getActivity());
                     }
                 }
-            });
+            });*/
             return rootView;
 
 
@@ -142,5 +144,13 @@ public class ServiceCartFragment extends Fragment {
                 Toast.makeText(getActivity().getApplicationContext(),"successfully placed order",Toast.LENGTH_SHORT);
             }
         }
+    //adding all services list to one
+    public ArrayList<Services> addAllServicesList(){
+        ArrayList<Services> servicesArrayList = new ArrayList<>();
+        for (int index = 0; index<CartActivity.serviceCartListByDatesArrayList.size();index++){
+            servicesArrayList.addAll(CartActivity.serviceCartListByDatesArrayList.get(index).getServicesArrayList());
+        }
+        return servicesArrayList;
+    }
 
     }

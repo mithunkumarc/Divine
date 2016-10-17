@@ -15,8 +15,18 @@ public class Partner implements Serializable{
     private String userID;
     private String location;
     private String locationId;
-    private boolean isSelected;//selected for quote or not
+    private boolean isSelected;//using for both selecting partner for service and art
     private int serviceCharge;
+    //required by cart
+    private String enquiryId;
+
+    public String getEnquiryId() {
+        return enquiryId;
+    }
+
+    public void setEnquiryId(String enquiryId) {
+        this.enquiryId = enquiryId;
+    }
 
     public boolean isSelected() {
         return isSelected;

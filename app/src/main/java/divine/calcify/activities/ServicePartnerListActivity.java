@@ -75,7 +75,7 @@ public class ServicePartnerListActivity extends AppCompatActivity implements Ser
         SharedPreferences userSharedPref = getSharedPreferences(RegisterOtpScreenActivity.UserAccountInfo, Context.MODE_PRIVATE);
         userName = userSharedPref.getString(RegisterOtpScreenActivity.UserName, "");
         userMobileNumber = userSharedPref.getString(RegisterOtpScreenActivity.UserMobileNumber,"");
-        spl_cart_button = (Button)findViewById(R.id.spl_cart_button);
+        //spl_cart_button = (Button)findViewById(R.id.spl_cart_button);
         spl_date = (TextView)findViewById(R.id.spl_date);
         spl_filter_partners= (ImageView)findViewById(R.id.spl_filter_partners);
         services = (Services) getIntent().getSerializableExtra("service_object");
@@ -158,7 +158,7 @@ public class ServicePartnerListActivity extends AppCompatActivity implements Ser
             }
         });
         //cart button
-        spl_cart_button.setOnClickListener(new View.OnClickListener() {
+        /*spl_cart_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 for(int index=0;index< GroupDetailFragment.partnerArrayList.size();index++){
@@ -176,7 +176,7 @@ public class ServicePartnerListActivity extends AppCompatActivity implements Ser
                     Toast.makeText(getApplicationContext(),"select single item for Add to cart",Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        });*/
     }
 
     @Override

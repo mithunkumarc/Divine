@@ -78,14 +78,14 @@
             android:textColor="@color/text_color_off"
             android:clickable="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginRight="5dp"
+
             android:gravity="center_vertical|center_horizontal"
             android:text="@string/spl_send_quote_text"
             android:id="@+id/spl_quote_button"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="50dp" />
-        <Button
+        <!--<Button
             android:textAllCaps="false"
             android:background="@color/background_off"
             android:textColor="@color/text_color_off"
@@ -97,7 +97,7 @@
             android:id="@+id/spl_cart_button"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="50dp" />
+            android:layout_height="50dp" />-->
     </LinearLayout>
 
 </LinearLayout>

@@ -1,6 +1,8 @@
 package divine.calcify.activities;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -47,6 +49,9 @@ public class SendQuoteToPartnerActivity extends AppCompatActivity {
     public String calendar_selected_date;
     public String calendar_selected_time;
     public String calendar_selected_day;
+
+    public String userName;
+    public String userMobileNumber;
     public Locations locations = HomeScreenActivity.locations;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +64,9 @@ public class SendQuoteToPartnerActivity extends AppCompatActivity {
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             window.setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
         }
+        SharedPreferences userSharedPref = getSharedPreferences(RegisterOtpScreenActivity.UserAccountInfo, Context.MODE_PRIVATE);
+        userName = userSharedPref.getString(RegisterOtpScreenActivity.UserName, "");
+        userMobileNumber = userSharedPref.getString(RegisterOtpScreenActivity.UserMobileNumber,"");
 
 
         services = (Services) getIntent().getSerializableExtra("service_object");
@@ -163,6 +171,8 @@ public class SendQuoteToPartnerActivity extends AppCompatActivity {
                 hashMap.put("partnerID",serviceProviderIdList);
                 hashMap.put("serviceAmount",serviceProviderCostForSelectedServiceList);
                 hashMap.put("userQuoteAmout",userQuoteAmout);
+                hashMap.put("customerName",userName);
+                hashMap.put("mobileNumber",userMobileNumber);
                 DivineServicesWebService divineServicesWebService = new DivineServicesWebService(this, DivineKeyWords.QUOTED_INFO_OF_SERVICE_KEY, hashMap);
                 divineServicesWebService.execute();
                 Toast.makeText(getApplicationContext(),"quote request sent",Toast.LENGTH_SHORT).show();

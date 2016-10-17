@@ -16,6 +16,7 @@ import divine.calcify.model.Locations;
 import divine.calcify.model.Partner;
 import divine.calcify.model.PartnerProfileInfo;
 import divine.calcify.model.ServiceCart;
+import divine.calcify.model.ServiceCartListByDates;
 import divine.calcify.model.Services;
 import divine.calcify.model.Temple;
 
@@ -301,7 +302,74 @@ public class JsonParserUtility {
     }
 
     //get list of services saved in cart along with selected partners
-    public static ArrayList<ServiceCart> getServicesFromCart(String jsonServicesFromCart){
+    public static ArrayList<ServiceCartListByDates> getServicesFromCart(String jsonServicesFromCart){
+        ArrayList<ServiceCartListByDates> serviceCartListByDatesArrayList = new ArrayList<>();
+        try{
+            JSONObject jsonObject = new JSONObject(jsonServicesFromCart);
+            JSONArray jsonArray = jsonObject.getJSONArray("enquiriesBO");
+            ServiceCart serviceCart = new ServiceCart();
+            for(int indexOne=0;indexOne<jsonArray.length();indexOne++){
+                JSONObject jsonObjectOne = jsonArray.getJSONObject(indexOne);
+                if (serviceCart.getUniqueDateList().add(jsonObjectOne.getString("dateOfEvent"))){
+                    ServiceCartListByDates serviceCartListByDates = new ServiceCartListByDates();
+                    serviceCartListByDates.setDate(jsonObjectOne.getString("dateOfEvent"));
+                    Services services = new Services();
+                    services.setService_id(jsonObjectOne.getString("serviceID"));
+                    services.setService_name(jsonObjectOne.getString("serviceName"));
+                    services.setServiceCost(jsonObjectOne.getString("cost"));
+                    services.setTimeSelectedByCustomerForService(jsonObjectOne.getString("timeOfEvent"));
+                    services.setDateSelectedByCustomerForService(jsonObjectOne.getString("dateOfEvent"));
+                    services.getUniqueServiceIds().add(jsonObjectOne.getString("serviceID"));
+                    Partner partner = new Partner();
+                    partner.setUserID(jsonObjectOne.getString("partnerID"));
+                    partner.setPartnerName(jsonObjectOne.getString("partnerName"));
+                    partner.setServiceCost(jsonObjectOne.getString("cost"));
+                    partner.setEnquiryId(jsonObjectOne.getString("enquiryID"));
+                    services.getPartnerArrayList().add(partner);
+                    serviceCartListByDates.getServicesArrayList().add(services);
+                    serviceCartListByDatesArrayList.add(serviceCartListByDates);
+                }else {
+                    for (int indexTwo = 0; indexTwo<serviceCartListByDatesArrayList.size();indexTwo++){
+                        if (serviceCartListByDatesArrayList.get(indexTwo).getDate().equals(jsonObjectOne.getString("dateOfEvent"))){
+                            for (int indexThree=0;indexThree<serviceCartListByDatesArrayList.get(indexTwo).getServicesArrayList().size();indexThree++) {
+                                if (serviceCartListByDatesArrayList.get(indexTwo).getServicesArrayList().get(indexThree).getUniqueServiceIds().add(jsonObjectOne.getString("serviceID"))){
+                                    Services services = new Services();
+                                    services.setService_id(jsonObjectOne.getString("serviceID"));
+                                    services.setService_name(jsonObjectOne.getString("serviceName"));
+                                    services.setServiceCost(jsonObjectOne.getString("cost"));
+                                    services.setTimeSelectedByCustomerForService(jsonObjectOne.getString("timeOfEvent"));
+                                    services.setDateSelectedByCustomerForService(jsonObjectOne.getString("dateOfEvent"));
+                                    services.getUniqueServiceIds().add(jsonObjectOne.getString("serviceID"));
+                                    Partner partner = new Partner();
+                                    partner.setUserID(jsonObjectOne.getString("partnerID"));
+                                    partner.setPartnerName(jsonObjectOne.getString("partnerName"));
+                                    partner.setEnquiryId(jsonObjectOne.getString("enquiryID"));
+                                    partner.setServiceCost(jsonObjectOne.getString("cost"));
+                                    services.getPartnerArrayList().add(partner);
+                                    serviceCartListByDatesArrayList.get(indexTwo).getServicesArrayList().add(services);
+                                }else {
+                                    for(int indexFour=0;indexFour<serviceCartListByDatesArrayList.get(indexTwo).getServicesArrayList().size();indexFour++){
+                                        if (serviceCartListByDatesArrayList.get(indexTwo).getServicesArrayList().get(indexFour).getService_id().equals(jsonObjectOne.getString("serviceID"))){
+                                            Partner partner = new Partner();
+                                            partner.setUserID(jsonObjectOne.getString("partnerID"));
+                                            partner.setPartnerName(jsonObjectOne.getString("partnerName"));
+                                            partner.setEnquiryId(jsonObjectOne.getString("enquiryID"));
+                                            partner.setServiceCost(jsonObjectOne.getString("cost"));
+                                            serviceCartListByDatesArrayList.get(indexTwo).getServicesArrayList().get(indexFour).getPartnerArrayList().add(partner);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }catch (Exception e){
+            Log.d("error/parseCart=",e.getMessage());
+        }
+        return serviceCartListByDatesArrayList;
+    }
+    /*public static ArrayList<ServiceCart> getServicesFromCart(String jsonServicesFromCart){
         ArrayList<ServiceCart> serviceCartArrayList = new ArrayList<>();
         try{
             JSONObject jsonObject = new JSONObject(jsonServicesFromCart);
@@ -338,7 +406,7 @@ public class JsonParserUtility {
 
         }
         return serviceCartArrayList;
-    }
+    }*/
 
     //parsePurchaseOrderForServiceCart
     public static String parsePurchaseOrderForServiceCart(String jsonString){
@@ -351,5 +419,7 @@ public class JsonParserUtility {
         }
         return result;
     }
+
+    //parse servi
 
 }
